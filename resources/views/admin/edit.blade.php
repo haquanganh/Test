@@ -103,7 +103,7 @@
 					</label>
 				</div>
 				<div class="col-md-8">
-					<input name="in_Skype" onkeypress="validate_spec(event)"  maxlength="32" type="text" class="form-control" value="{{isset($employee->E_Skype) && $errors->has('in_Skype') == false && $errors->has('wrong_skype') == false && old('in_Skype') == '' ? '0'.$employee->E_Skype : old('in_Skype')}}">
+					<input name="in_Skype" onkeypress="validate_spec5(event)"  maxlength="32" type="text" class="form-control" value="{{isset($employee->E_Skype) && $errors->has('in_Skype') == false && $errors->has('wrong_skype') == false && old('in_Skype') == '' ? $employee->E_Skype : old('in_Skype')}}">
 				</div>
 				@if ($errors->has('in_Skype'))
                     <div class="help-block pull-right" style="margin-right: 15px;margin-bottom: 0px">
@@ -359,6 +359,17 @@ function validate_spec4(evt){
         theEvent.returnValue = false;
         if(theEvent.preventDefault) theEvent.preventDefault();
     }
+}
+function validate_spec5(evt){
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode( key );
+    var regex = /[a-zA-Z0-9/, ]/;
+    if( !regex.test(key) ) {
+        theEvent.returnValue = false;
+        if(theEvent.preventDefault) theEvent.preventDefault();
+    }
+
 }
 </script>
 @stop
