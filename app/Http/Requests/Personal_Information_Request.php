@@ -26,7 +26,7 @@ class Personal_Information_Request extends Request
          $rules = [
         // 'in_skype' => 'min:6|max:50|required',
         'in_phone' => 'min:10|max:11|required',
-        'in_address' => 'required|max:65|min:4',
+        'in_address' => 'required|min:4',
         'in_img' => 'image|mimes:jpg,jpeg,png|max:6144',
         ];
         if($this->request->get('in_Skype') == true){
@@ -42,7 +42,6 @@ class Personal_Information_Request extends Request
         'in_phone.max' => 'Please enter the Phone equal or less than 11 numbers',
         'in_address.required' => 'Please enter the Address',
         'in_address.min' => 'Please enter the Address equal or more than 4 characters',
-        'in_address.max' => 'Please enter the Address equal or less than 65 characters',
         'in_img.max' => 'Please upload an image less than 6MB',
         'in_img.image' => 'Please upload an picture',
         'in_img.mimes' => 'Please upload an picture with mimes : jpg, jpeg, png',

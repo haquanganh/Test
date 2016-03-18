@@ -26,7 +26,7 @@ class Admin_Personal_Information_Request extends Request
         $rules = [
             'in_EName' => 'required|min:2|max:15',
             'in_Name'=> 'required|max:50',
-            'in_Phone' => 'min:10|max:11|required',
+            'in_Phone' => 'min:10|max:11|required|unique:Employee,E_Phone',
             'in_Skype' => 'min:6|max:32|required',
             'sl_Role' => 'required',
             'in_CostHour' => 'required|min:1|max:4',
@@ -52,6 +52,7 @@ class Admin_Personal_Information_Request extends Request
             'in_Phone.required' => 'Please enter the Phone',
             'in_Phone.min' => 'Please enter the Phone is more than 10 numbers',
             'in_Phone.max' => 'Please enter the Phone is equal or less than 11 numbers',
+            'in_Phone.unique' => 'The Phone already exists',
             'in_Skype.required' => 'Please enter the Skype',
             'in_Skype.min' => 'Please enter the Skype is equal or more than 6 characters',
             'in_Skype.max' => 'Please enter the Skype is equal or less than 32 characters',

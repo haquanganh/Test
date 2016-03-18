@@ -123,7 +123,7 @@ class Personal_Information_Controller extends Controller
                 $error_list = $error_list + $arr6;
             }
         }
-        if(!empty($request->in_Skype) && (preg_match('/[A-Z]+[a-z]/',$request->in_Skype)) == false && (preg_match('/[1-9]/',$request->in_Skype)) == true && (preg_match('/./',$request->in_Skype)) == false){
+        if(!empty($request->in_Skype) && (preg_match('/[A-Z]+[a-z]/',$request->in_Skype)) == false && (preg_match('/[1-9]/',$request->in_Skype)) == true && (preg_match('/./',$request->in_Skype)) == false || (preg_match('/[0-9]/',$request->in_Skype[0])) == true){
             $arr7 = array('wrong_skype'=> 'Invalid skype without characters');
             $error_list = $error_list + $arr7;
         }

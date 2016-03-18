@@ -27,8 +27,8 @@ class RegisterRequest extends Request
             'in_Email' =>'required|unique:users,email',
             'in_EName' => 'required|min:2|max:15',
             'in_Name'=> 'required|max:50',
-            'in_Address' => 'max:65|min:4',
-            'in_Phone' => 'min:10|max:11|required',
+            'in_Address' => 'min:4',
+            'in_Phone' => 'min:10|max:11|required|unique:Employee,E_Phone',
             'sl_Role' => 'required',
             'in_Skype' => 'min:6|max:32|required|unique:Employee,E_Skype',
             'in_CostHour' => 'required|min:1|max:4',
@@ -66,6 +66,7 @@ class RegisterRequest extends Request
             'in_Name.max' => 'Please enter the Full Name is less than 50 characters',
             'in_Phone.min' => 'Please enter the Phone is more than 10 numbers',
             'in_Phone.max' => 'Please enter the Phone is equal or less than 11 numbers',
+            'in_Phone.unique' => 'The Phone already exists',
             'in_Skype.required' => 'Please enter the Skype',
             'in_Skype.min' => 'Please enter the Skype address is equal or more than 6 characters',
             'in_Skype.max' => 'Please enter the Skpe address is equal or less than 32 characters',
@@ -86,7 +87,6 @@ class RegisterRequest extends Request
             'in_img.image' => 'Please upload a picture',
             'in_img.required' =>'Please upload a file',
             'in_img.mimes' => 'Please upload a picture with mimes : jpg, jpeg, png',
-            'in_Address.max' => 'The Address must be contained equal or less than 65 characters',
             'in_Address.min' => 'The Address must be contained equal or more than 4 characters',
         ];
         if($this->request->get('in_Year') == true){
