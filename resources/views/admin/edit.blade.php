@@ -63,7 +63,7 @@
 					</label>
 				</div>
 				<div class="col-md-8">
-					<input name="in_Address" onkeypress="validate_spec1(event)" type="text" class="form-control" value="{{isset($employee->E_Address) && $errors->has('in_Address') == false && $errors->has('wrong_address') == false && old('in_Address') == '' ? $employee->E_Address : old('in_Address')}}">
+					<input name="in_Address" onkeypress="validate_spec5(event)" type="text" class="form-control" value="{{isset($employee->E_Address) && $errors->has('in_Address') == false && $errors->has('wrong_address') == false && old('in_Address') == '' ? $employee->E_Address : old('in_Address')}}">
 				</div>
 				@if ($errors->has('in_Address'))
                     <div class="help-block pull-right" style="margin-right: 15px;margin-bottom: 0px">
@@ -103,7 +103,7 @@
 					</label>
 				</div>
 				<div class="col-md-8">
-					<input name="in_Skype" onkeypress="validate_spec5(event)"  maxlength="32" type="text" class="form-control" value="{{isset($employee->E_Skype) && $errors->has('in_Skype') == false && $errors->has('wrong_skype') == false && old('in_Skype') == '' ? $employee->E_Skype : old('in_Skype')}}">
+					<input name="in_Skype" onkeypress="validate_spec(event)"  maxlength="32" type="text" class="form-control" value="{{isset($employee->E_Skype) && $errors->has('in_Skype') == false && $errors->has('wrong_skype') == false && old('in_Skype') == '' ? $employee->E_Skype : old('in_Skype')}}">
 				</div>
 				@if ($errors->has('in_Skype'))
                     <div class="help-block pull-right" style="margin-right: 15px;margin-bottom: 0px">
