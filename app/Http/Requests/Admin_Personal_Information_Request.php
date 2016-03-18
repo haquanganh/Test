@@ -32,7 +32,7 @@ class Admin_Personal_Information_Request extends Request
             'in_CostHour' => 'required|min:1|max:4',
             'in_Year.0' => 'required',
             'in_img' => 'min:0|max:6144|image|mimes:jpg,jpeg,png',
-            'in_address' => 'required|min:4',
+            'in_address' => 'min:4',
         ];
 
         if($this->request->get('in_Year') == true){
