@@ -111,7 +111,7 @@ class Personal_Information_Controller extends Controller
             $arr4 = array('wrong_address'=> 'Invalid address without characters');
             $error_list = $error_list + $arr4;
         }
-        if($request->in_Phone == '0000000000' || $request->in_Phone == '00000000000' || $request->in_Phone[0] != '0'){
+        if($request->in_Phone == '0000000000' || $request->in_Phone == '00000000000' || $request->in_Phone[0] != '0' || ($request->in_Phone[0] == '0'&& $request->in_Phone[1] == '0')){
             $arr5 = array('wrong_phone' => 'Invalid phone');
             $error_list = $error_list + $arr5;
         }
