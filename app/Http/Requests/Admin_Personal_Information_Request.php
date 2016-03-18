@@ -32,6 +32,7 @@ class Admin_Personal_Information_Request extends Request
             'in_CostHour' => 'required|min:1|max:4',
             'in_Year.0' => 'required',
             'in_img' => 'min:0|max:6144|image|mimes:jpg,jpeg,png',
+            'in_address' => 'required|min:4',
         ];
 
         if($this->request->get('in_Year') == true){
@@ -65,6 +66,7 @@ class Admin_Personal_Information_Request extends Request
             'in_img.max' => 'Please upload a file with size is less than 6MB',
             'in_img.image' => 'Please upload a picture',
             'in_img.mimes' => 'Please upload a picture with mimes : jpg, jpeg, png',
+            'in_address.min' => 'Please enter the Address equal or more than 4 characters',
 
         ];
         if($this->request->get('in_Year') == true){
